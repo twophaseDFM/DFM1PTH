@@ -1,0 +1,13 @@
+This is the twophase DFN model from Dejian
+
+Installation instruction (for linux)
+For building the code from source, create a new folder and download the installDejian2021.sh script from this repository into the newly created folder. Then, type
+chmod +x installDejian2021.sh
+./installDejian2021.sh
+
+After successfully running the installation script, type
+cd DFM2PTH/build-cmake/DFM2PTH/
+make dfm2pth
+
+You can now execute the model by typing:
+./dfm2pth params.input

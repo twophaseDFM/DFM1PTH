@@ -1,0 +1,71 @@
+[TimeLoop]
+TEnd = 1e9 # [s]
+DtInitial = 10 # [s]
+MaxTimeStepSize = 1e6 # [s]
+
+[Problem]
+EnableGravity = 1
+
+[Grid]
+#File = ./grids/DFM3.msh     # constant aperture
+File = ./grids/DFM4_aperture_dist.msh  # randomly distributed aperture
+DomainMarkers = true # enable domain markers
+
+[Matrix]
+
+Problem.IsInjectCO2 = 1
+Problem.IsPureCO2 = 0
+
+Problem.Name = matrix
+
+Problem.InjectionRate = 1e-3   # [kg/s/m2]
+Problem.InjectionTemperature = 303.15   # [K]
+SpatialParams.PermeabilityRock = 1e-15
+SpatialParams.Porosity = 0.01
+SpatialParams.VanGenuchtenAlpha = 1e-3
+SpatialParams.VanGenuchtenN = 3
+SpatialParams.Snr = 0.0
+SpatialParams.Swr = 0.0
+
+# dont use yet
+Problem.BoundaryOverPressure = 5e5
+Problem.BoundarySaturation = 0.5
+SpatialParams.PermeabilityWell = 1e-10
+
+[Fracture]
+Problem.IsPureCO2 = 0
+
+Problem.Name = fractures
+
+SpatialParams.Aperture1 = 1.9e-3
+SpatialParams.Aperture2 = 1.45e-3
+SpatialParams.Aperture3 = 1e-3
+SpatialParams.Aperture4 = 0.55e-3
+SpatialParams.Aperture5 = 0.1e-3
+SpatialParams.Permeability1 = 3e-7
+SpatialParams.Permeability2 = 1.7e-7
+SpatialParams.Permeability3 = 8e-8
+SpatialParams.Permeability4 = 2.5e-8
+SpatialParams.Permeability5 = 8e-10
+
+SpatialParams.Porosity = 0.85
+
+SpatialParams.VanGenuchtenAlpha = 1e-3
+SpatialParams.VanGenuchtenN = 3
+SpatialParams.Swr = 0.0
+SpatialParams.Snr = 0.0
+
+
+# dont use yet
+SpatialParams.Barrier.VanGenuchtenAlpha = 1e-3
+SpatialParams.Barrier.VanGenuchtenN = 3
+SpatialParams.Barrier.Snr = 0.0
+SpatialParams.Barrier.Swr = 0.0
+
+[Component]
+SolidDensity = 2700
+SolidThermalConductivity = 2.8
+SolidHeatCapacity = 790
+
+[Brine]
+Salinity = 1e-1
