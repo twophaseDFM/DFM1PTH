@@ -2,7 +2,7 @@ This is the twophase DFN model from Dejian
 
 Installation instruction (for linux)
 For building the code from source, create a new folder and download the installDejian2021.sh script from this repository into the newly created folder. Then, type
-chmod +x installDejian2021.sh
+chmod +x installDejian2021_1p.sh
 ./installDejian2021_1p.sh
 
 After successfully running the installation script, type
