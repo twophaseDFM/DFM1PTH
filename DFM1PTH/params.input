@@ -9,27 +9,40 @@ FractureAperture = 1e-3
 
 [Grid]
 #File = ./grids/gravity.msh
-File = ./grids/DFM3.msh
-#File = ./grids/DFM2.msh
+#File = ./grids/DFM3.msh
+#File = ./grids/DFM4_aperture_dist.msh
+File = ./grids/DFM4_finemesh_rda.msh
+DomainMarkers = true # enable domain markers
 
 [Bulk]
 Problem.Name = bulk
 SpatialParams.Permeability = 1e-15
 SpatialParams.Porosity = 0.01
-Problem.InjectionRate = 1e-3   # [kg/s/m2]
+Problem.InjectionRate = 3e-3   # [kg/s/m2]
 Problem.InjectionTemperature = 303.15   # [K]
 
 [LowDim]
 Problem.Name = lowdim
-SpatialParams.Permeability = 1e-8
 SpatialParams.Porosity = 0.85
+
+SpatialParams.Aperture1 = 1.9e-3
+SpatialParams.Aperture2 = 1.45e-3
+SpatialParams.Aperture3 = 1e-3
+SpatialParams.Aperture4 = 0.55e-3
+SpatialParams.Aperture5 = 0.1e-3
+
+Problem.Stiffness = 500e9  # 500GPa/m
+Problem.WettingPhaseThermalExpansionCoefficient = 1e-4     # 1/K
+Problem.NonWettingPhaseThermalExpansionCoefficient = 1e-5     # 1/K
+Problem.a = 1
+Problem.b = 1
 
 
 [FacetCoupling]
 Xi = 1
 
 [Vtk]
-OutputName = pureCO2_1p
+OutputName = CO2_1p_rdam_3e-3
 
 #[Assembly]
 #NumericDifference.BaseEpsilon = 1e-3
