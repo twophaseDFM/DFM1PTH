@@ -1,1 +1,1 @@
-add_subdirectory(DFM2PTH)
+add_subdirectory(DFM1PTH)
