@@ -8,7 +8,7 @@ DEPENDENCIES=@REQUIRES@
 
 Name: @PACKAGE_NAME@
 Version: @VERSION@
-Description: DFM2PTH module
+Description: DFM1PTH module
 URL: http://dune-project.org/
 Requires: dumux
 Libs: -L${libdir}
