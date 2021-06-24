@@ -6,7 +6,7 @@ chmod +x installDejian2021_1p.sh
 ./installDejian2021_1p.sh
 
 After successfully running the installation script, type
-cd DFM2PTH/build-cmake/DFM1PTH/
+cd DFM1PTH/build-cmake/DFM1PTH/
 make dfm1pth
 
 You can now execute the model by typing:
