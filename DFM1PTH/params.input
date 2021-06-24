@@ -1,0 +1,43 @@
+[TimeLoop]
+TEnd = 1e9 # [s]
+DtInitial = 10 # [s]
+MaxTimeStepSize = 1e6 # [s]
+
+[Problem]
+EnableGravity = true
+FractureAperture = 1e-3
+
+[Grid]
+#File = ./grids/gravity.msh
+File = ./grids/DFM3.msh
+#File = ./grids/DFM2.msh
+
+[Bulk]
+Problem.Name = bulk
+SpatialParams.Permeability = 1e-15
+SpatialParams.Porosity = 0.01
+Problem.InjectionRate = 1e-3   # [kg/s/m2]
+Problem.InjectionTemperature = 303.15   # [K]
+
+[LowDim]
+Problem.Name = lowdim
+SpatialParams.Permeability = 1e-8
+SpatialParams.Porosity = 0.85
+
+
+[FacetCoupling]
+Xi = 1
+
+[Vtk]
+OutputName = pureCO2_1p
+
+#[Assembly]
+#NumericDifference.BaseEpsilon = 1e-3
+
+[Component]
+SolidDensity = 2700
+SolidThermalConductivity = 2.8
+SolidHeatCapacity = 790
+
+[Brine]
+Salinity = 1e-1
